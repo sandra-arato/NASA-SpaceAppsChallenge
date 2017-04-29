@@ -84,7 +84,21 @@ def main():
                 'appliances': running
             })
 
+        radiations_24 = []
+        hours = []
+        key = next(iter(radiations))
+        
+        for r in radiations[ key ]:
+            if r['hour'] in hours:
+                continue
 
+            hours.append(r['hour'])
+            radiations_24.append(r)
+
+            print json.dumps(radiations_24, indent=4)
+        return
+
+    # dont overwrite data.json for now
     with open('./output/data.json', 'w') as outfile:
         print json.dumps(radiations['2016-09-30'], indent=4)
         json.dump(radiations, outfile, indent=4)
