@@ -34,7 +34,6 @@ class App extends Component {
           <p>Yesterday's Usage: <span>2.2kW/h</span></p>
           <p>Tomorrow's Forecast: <span>2kW/h</span></p>
         </div>
-
         <img src={house} className="House" alt="house" />
         <footer className="Ground">
           <img src={gear} className="Settings" alt="settings" />

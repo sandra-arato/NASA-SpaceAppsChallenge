@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as data from './data.json';
+import * as appls from './appliances.json';
+import Bar from './Bar.js';
 import './App.css';
 
 
@@ -9,7 +11,10 @@ class ClockDisplay extends Component {
     this.state = {
       value: props.value,
       time: '06:00',
-      iterator: 5
+      iterator: 5,
+      solar: 0,
+      battery: 0.4,
+      usage: 0.5
     };
 
     /*!
@@ -127,8 +132,28 @@ class ClockDisplay extends Component {
       string = data[iterator].hour > 9 ? '' : '0';
       string = string +  data[iterator].hour + ':00';
 
+
+      var solarPercentage = data[iterator].kw / data[13].kw;
+      var consumption = () => {
+        var appliances = [];
+        var summa = 0;
+        var running =  data[iterator].appliances;
+        for (var a = 0; a < running.length; a++ ) {
+          for(var key in appls){
+            if (appls.hasOwnProperty(key) && appls[key].id in running) {
+              summa = summa + appls[key].total_kw;
+            }
+          }
+          appliances.push(summa);
+        }
+        return summa;
+      }
+
+      console.log(consumption());
+      console.log(solarPercentage);
       that.setState((prevState, props) => {
-        return {time: string };
+        return {time: string,
+        solar: solarPercentage };
       });
     }, 1000);
 
@@ -148,9 +173,15 @@ class ClockDisplay extends Component {
 
   render() {
     return (
-      <div id="clockItem" className="clock">
-        <p>{this.state.time}</p>
+      <div className="ClockContainer">
+        <div id="clockItem" className="clock">
+          <p>{this.state.time}</p>
+        </div>
+        <Bar type="solar" percent={this.state.solar} />
+        <Bar type="usage" percent={this.state.usage} />
+        <Bar type="battery" percent={this.state.batter} />
       </div>
+
     );
   }
 }

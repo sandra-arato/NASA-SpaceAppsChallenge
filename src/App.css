@@ -437,6 +437,7 @@ body {
   animation: SkyColor infinite 24s linear;
   padding: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .night {
@@ -448,6 +449,7 @@ body {
   width: 100%;
   font-family: 'Avenir';
   letter-spacing: 0.07em;
+  overflow: hidden;
 }
 .location {
   position: absolute;
@@ -658,6 +660,7 @@ body {
   transform: rotate(90deg);
 }
 
+
 .loading{
   width: 100%;
   height: 8px;
@@ -674,6 +677,51 @@ body {
   background: grey;
   background-image: linear-gradient(45deg, white 0%, white 30%, grey 30%, grey 70%, white 70%);
   background-size: 25px 10px;
+  transition: width 0.33s linear;
+}
+
+.loading.energy {
+  position: absolute;
+  right: 200px;
+  top: 234px;
+  z-index: 3000;
+  transform: rotate(90deg);
+  width: 166px;
+  height: 16px;
+  background: #51495b;
+  border-width: 3px 4px;
+  border-radius: 5px;
+  border-color: #707e8e;
+}
+
+.loading.energy.solar {
+  right: 72px;
+}
+
+.loading.energy.usage {
+  right: 142px;
+}
+
+.loading.energy.battery {
+  right: 3px;
+}
+
+.loading-bar.battery {
+  width: 210px;
+  background-image: linear-gradient(45deg, #c73059 0%, #c73059 30%, #911159 30%, #911159 70%, #c73059 70%);
+  background-size: 40px 19px;
+}
+
+.loading-bar.solar {
+  width: 210px;
+  background-image: linear-gradient(45deg, #fff4c9 0%, #fff4c9 30%, #c3cdd5 30%, #c3cdd5 70%, #fff4c9 70%);
+  background-size: 40px 19px;
+}
+
+.loading-bar.usage {
+  width: 210px;
+  background-image: linear-gradient(45deg, #83e2e2 0%, #83e2e2 30%, #3ac3f5 30%, #3ac3f5 70%, #83e2e2 70%);
+  background-size: 40px 19px;
 }
 
 .loading-bar.out {
