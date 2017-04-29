@@ -471,7 +471,7 @@ body {
 .Settings {
   display: block;
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   left: 30px;
   height: 70px;
   z-index: 1000;
@@ -488,6 +488,22 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   padding: 0 12px;
+  line-height: 1.4em;
+  padding-bottom: 12px;
+}
+
+.MeterContainer p {
+  margin-left: 10px;
+}
+
+.MeterContainer img + p {
+  margin-top: 24px;
+}
+
+
+.MeterContainer span {
+  color: #007ca3;
+  font-weight: 600;
 }
 
 .Meters {
@@ -554,9 +570,50 @@ body {
 
 .Car {
   position: fixed;
-  bottom: 120px;
-  width: 400px;
+  bottom: 106px;
+  left: 290px;
+  width: 170px;
   margin: 0;
+}
+
+.Social {
+  border-radius: 40px;
+  position: fixed;
+  bottom: 8px;
+  left: 100px;
+  width: 120px;
+  margin: 0;
+  padding-bottom: 12px;
+  z-index: 1000;
+}
+
+.Money {
+  border-radius: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 210px;
+  width: 180px;
+  margin: 0;
+  padding-bottom: 12px;
+  vertical-align: top;
+  z-index: 1000;
+}
+
+.Money img, .Money span {
+  vertical-align: top;
+}
+
+.Money img {
+  width: 60px;
+}
+
+.Money span {
+  margin-top: 10px;
+}
+
+.Social:hover {
+  cursor: pointer;
+  background-color: #d7d7d7;
 }
 
 /* Clock*/

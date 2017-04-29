@@ -1,4 +1,4 @@
-export const data = [
+[
     {
         "timestamp": "1475056819",
         "kw": 0.00122,
@@ -238,4 +238,4 @@ export const data = [
         ],
         "hour": 23
     }
-];
+]
