@@ -8,8 +8,8 @@ class ClockDisplay extends Component {
     super(props);
     this.state = {
       value: props.value,
-      time: '6:00 AM',
-      iterator: 6
+      time: '06:00',
+      iterator: 5
     };
 
     /*!
@@ -119,67 +119,37 @@ class ClockDisplay extends Component {
 
   getMorningTimestamp() {
     var that = this;
-    let iterator = 12;
-    let timeText = '';
+    let iterator = that.state.iterator;
+    let string = '00:00';
 
-    // for (var i = 12; i > -6; i--) {
-    //
-    //   for (var j = 0; i < 2; j++) {
-    //     if (i > 0) {
-    //
-    //     } else {
-    //
-    //     }
-    //
-    //     let daytime = j > 0 ? ' AM' : ' PM';
-    //
-    //   }
-    //
-    //
-    // }
+    var timer = that.requestInterval(function() {
+      iterator = (iterator + 1) % 24;
+      string = data[iterator].hour > 9 ? '' : '0';
+      string = string +  data[iterator].hour + ':00';
 
-    var timerFn = that.requestInterval(function() {
-      console.log('iterator', iterator);
-      if (iterator > 12 || iterator < 6) {
-        that.clearRequestInterval(that.timer);
-      }
-      console.log(that.state.time);
-      // that.updateHours(iterator);
-      iterator--;
-    }, 2000);
-    that.timer = timerFn;
-    return timeText;
-  }
+      that.setState((prevState, props) => {
+        return {time: string };
+      });
+    }, 1000);
 
-  updateHours(i) {
-    var that = this;
-    if (i< 0 && that.timer) {
-      that.clearRequestInterval(that.timer);
+    that.timer = timer;
+    try {
+      that.timer();
+    } catch(e) {
+      // this is valid at 2:28AM.
+      return;
     }
 
-    this.setState((prevState, props) => {
-      const timestamp = data[i].timestamp;
-      var date = new Date(timestamp * 1000);
-      console.log(date);
-      return {
-        time: date.getHours() + ':' + '' + date.getMinutes(),
-      };
-    });
   }
 
   componentDidMount() {
-    clearInterval(this.timer);
     this.getMorningTimestamp();
-
   }
 
   render() {
-    let test = (data);
-    console.log(test);
-    this.getMorningTimestamp();
     return (
       <div id="clockItem" className="clock">
-        <p>7:30 AM</p>
+        <p>{this.state.time}</p>
       </div>
     );
   }
