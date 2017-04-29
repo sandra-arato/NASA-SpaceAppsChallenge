@@ -511,6 +511,16 @@ body {
   height: 80px;
 }
 
+.SunMoon-img {
+    position: relative;
+    top: 70%;
+    left: 60%;
+    margin-left: -50%;
+    width: 90%;
+    animation: SunMoon-img-spin infinite 24s linear;
+    transform: rotate(100deg);
+}
+
 .App-header {
   background-color: #222;
   height: 150px;
@@ -530,6 +540,20 @@ body {
   min-height: 120px;
   background: #bcd63d;
   border-top: 12px solid #f2f3b1;
+}
+
+@keyframes SunMoon-img-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes myOrbit {
+    0%  { transform: rotate(90deg) translateX(5px) translateY(50vh); }
+    25%  { transform: rotate(180deg) translateX(5px) translateY(50vh); }
+    50%  { transform: rotate(270deg) translateX(5px) translateY(50vh); }
+    75%  { transform: rotate(360deg) translateX(5px) translateY(50vh); }
+    100%  { transform: rotate(0deg) translateX(5px) translateY(50vh); }
+
 }
 
 @keyframes Sun-img-spin {
