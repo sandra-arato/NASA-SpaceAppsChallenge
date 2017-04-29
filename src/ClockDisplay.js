@@ -134,23 +134,32 @@ class ClockDisplay extends Component {
 
 
       var solarPercentage = data[iterator].kw / data[13].kw;
+      var appliances = [];
       var consumption = () => {
-        var appliances = [];
         var summa = 0;
         var running =  data[iterator].appliances;
+        console.log('hey', a);
         for (var a = 0; a < running.length; a++ ) {
+          console.log('hey', a);
           for(var key in appls){
-            if (appls.hasOwnProperty(key) && appls[key].id in running) {
+
+            if (appls.hasOwnProperty(key) && running.includes(appls[key].id)) {
               summa = summa + appls[key].total_kw;
+              console.log('summa', summa);
+              appliances.push(summa);
             }
           }
-          appliances.push(summa);
+          console.log('current', maxConsumption);
+
         }
-        return summa;
+        return appliances;
       }
 
-      console.log(consumption());
-      console.log(solarPercentage);
+      console.log(appliances);
+      consumption();
+      var maxConsumption =  Math.max.apply(null, appliances);
+      console.log('max', maxConsumption);
+      console.log('solar', solarPercentage);
       that.setState((prevState, props) => {
         return {time: string,
         solar: solarPercentage };
