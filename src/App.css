@@ -437,6 +437,7 @@ body {
   animation: SkyColor infinite 24s linear;
   padding: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 .night {
@@ -448,6 +449,7 @@ body {
   width: 100%;
   font-family: 'Avenir';
   letter-spacing: 0.07em;
+  overflow: hidden;
 }
 .location {
   position: absolute;
@@ -471,7 +473,7 @@ body {
 .Settings {
   display: block;
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   left: 30px;
   height: 70px;
   z-index: 1000;
@@ -492,6 +494,22 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   padding: 0 12px;
+  line-height: 1.4em;
+  padding-bottom: 12px;
+}
+
+.MeterContainer p {
+  margin-left: 10px;
+}
+
+.MeterContainer img + p {
+  margin-top: 24px;
+}
+
+
+.MeterContainer span {
+  color: #007ca3;
+  font-weight: 600;
 }
 
 .Meters {
@@ -568,9 +586,51 @@ body {
 
 .Car {
   position: fixed;
-  bottom: 120px;
-  width: 400px;
+  bottom: 106px;
+  left: 290px;
+  width: 170px;
   margin: 0;
+}
+
+.Social {
+  border-radius: 40px;
+  position: fixed;
+  bottom: 8px;
+  left: 100px;
+  width: 120px;
+  margin: 0;
+  padding-bottom: 12px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in;
+}
+
+.Money {
+  border-radius: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 210px;
+  width: 180px;
+  margin: 0;
+  padding-bottom: 12px;
+  vertical-align: top;
+  z-index: 1000;
+}
+
+.Money img, .Money span {
+  vertical-align: top;
+}
+
+.Money img {
+  width: 60px;
+}
+
+.Money span {
+  margin-top: 10px;
+}
+
+.Social:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 
 /* Clock*/
@@ -600,10 +660,11 @@ body {
   transform: rotate(90deg);
 }
 
+
 .loading{
   width: 100%;
   height: 8px;
-  border: solid 2px red;
+  border: solid 2px grey;
   overflow: hidden;
   position: relative;
 }
@@ -613,13 +674,66 @@ body {
   position: absolute;
   width: 600px;
   height: 100%;
+  background: grey;
+  background-image: linear-gradient(45deg, white 0%, white 30%, grey 30%, grey 70%, white 70%);
+  background-size: 25px 10px;
+  transition: width 0.33s linear;
+}
+
+.loading.energy {
+  position: absolute;
+  right: 200px;
+  top: 234px;
+  z-index: 3000;
+  transform: rotate(90deg);
+  width: 166px;
+  height: 16px;
+  background: #51495b;
+  border-width: 3px 4px;
+  border-radius: 5px;
+  border-color: #707e8e;
+}
+
+.loading.energy.solar {
+  right: 72px;
+}
+
+.loading.energy.usage {
+  right: 142px;
+}
+
+.loading.energy.battery {
+  right: 3px;
+}
+
+.loading-bar.battery {
+  width: 210px;
+  background-image: linear-gradient(45deg, #c73059 0%, #c73059 30%, #911159 30%, #911159 70%, #c73059 70%);
+  background-size: 40px 19px;
+}
+
+.loading-bar.solar {
+  width: 210px;
+  background-image: linear-gradient(45deg, #fff4c9 0%, #fff4c9 30%, #c3cdd5 30%, #c3cdd5 70%, #fff4c9 70%);
+  background-size: 40px 19px;
+}
+
+.loading-bar.usage {
+  width: 210px;
+  background-image: linear-gradient(45deg, #83e2e2 0%, #83e2e2 30%, #3ac3f5 30%, #3ac3f5 70%, #83e2e2 70%);
+  background-size: 40px 19px;
+}
+
+.loading-bar.out {
   background: red;
   background-image: linear-gradient(45deg, white 0%, white 30%, red 30%, red 70%, white 70%);
-  background-size: 25px 10px;
   animation: Slide 8s linear infinite;
 }
+
 .loading-bar.in {
+  background: green;
   background-image: linear-gradient(45deg, white 0%, white 30%, green 30%, green 70%, white 70%);
+  animation: Slide 8s linear infinite;
 }
 
 @keyframes Settings-spin {
