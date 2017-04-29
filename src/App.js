@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import DayTimer from './DayTimer.js';
+import Sun from './Sun.js';
+import meters from './meters.svg';
+import gear from './gear.svg';
+import house from './house.gif';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <DayTimer daytime={true} testValue={"test"}>
+          <Sun isItSun={true} />
+        </DayTimer>
+        <div className="location">
+          <p>Perth</p>
+          <p>29 April 2017</p>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="MeterContainer">
+          <img src={meters} className="Meters" alt="meter" />
+          <p>Yesterday's Usage: 2.2kW/h</p>
+          <p>Tomorrow's Forecast: 2kW/h</p>
+        </div>
+
+        <img src={house} className="House" alt="house" />
+        <img src={gear} className="Settings" alt="settings" />
+        <footer className="Ground"></footer>
       </div>
     );
   }
