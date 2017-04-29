@@ -1,9 +1,23 @@
-.App {
-  text-align: center;
+body {
+  box-sizing: border-box;
+  background: #ebfcfc;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.night {
+  background: #164747;
+}
+
+.App {
+  text-align: center;
+    padding-top: 40px;
+}
+
+.Sun-img {
+  animation: Sun-img-spin infinite 30s linear;
+  height: 120px;
+}
+
+.Moon-img {
   height: 80px;
 }
 
@@ -18,7 +32,16 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+.Ground {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  min-height: 120px;
+  background: #064e23;
+}
+
+@keyframes Sun-img-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
