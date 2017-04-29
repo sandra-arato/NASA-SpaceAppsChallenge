@@ -17,6 +17,9 @@ class App extends Component {
           <p>Perth</p>
           <p>29 April 2017</p>
         </div>
+        <div id="clockItem" className="clock">
+          <p>7:30 AM</p>
+        </div>
         <div className="MeterContainer">
           <img src={meters} className="Meters" alt="meter" />
           <p>Yesterday's Usage: 2.2kW/h</p>
@@ -24,8 +27,14 @@ class App extends Component {
         </div>
 
         <img src={house} className="House" alt="house" />
-        <img src={gear} className="Settings" alt="settings" />
-        <footer className="Ground"></footer>
+        <footer className="Ground">
+          <img src={gear} className="Settings" alt="settings" />
+          <div className="container">
+            <div className="loading">
+              <div className="loading-bar"></div>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
