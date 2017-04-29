@@ -502,6 +502,7 @@ body {
   left: 0;
   animation: Sun-img-spin infinite 30s linear;
   height: 120px;
+  z-index: 900;
 }
 
 .Moon-img {
@@ -509,6 +510,7 @@ body {
   top: 0;
   left: 0;
   height: 80px;
+  z-index: 900;
 }
 
 .App-header {
@@ -530,6 +532,7 @@ body {
   min-height: 120px;
   background: #bcd63d;
   border-top: 12px solid #f2f3b1;
+  z-index: 950;
 }
 
 @keyframes Sun-img-spin {

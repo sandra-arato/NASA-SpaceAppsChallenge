@@ -150,7 +150,7 @@ class Sun extends Component {
         }
 
         // TODO: x should be between 2 and 80, y shoudl be between 20 and 60
-        return {coordinates: [seconds * 8, vertical]};
+        return {coordinates: [seconds * 9, vertical]};
       });
 
     }, 1000);
