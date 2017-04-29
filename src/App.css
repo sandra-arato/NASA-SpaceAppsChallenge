@@ -1,6 +1,8 @@
 body {
   box-sizing: border-box;
   background: #ebfcfc;
+  background-image: url('./day.png');
+  background-size: cover;
 }
 
 .night {
@@ -8,16 +10,33 @@ body {
 }
 
 .App {
+  position: absolute;
   text-align: center;
-    padding-top: 40px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.Day {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  text-align: left;
 }
 
 .Sun-img {
+  position: relative;
+  top: 0;
+  left: 0;
   animation: Sun-img-spin infinite 30s linear;
   height: 120px;
 }
 
 .Moon-img {
+  position: relative;
+  top: 0;
+  left: 0;
   height: 80px;
 }
 
@@ -38,7 +57,8 @@ body {
   width: 100%;
   margin: 0;
   min-height: 120px;
-  background: #064e23;
+  background: #bcd63d;
+  border-top: 12px solid #f2f3b1;
 }
 
 @keyframes Sun-img-spin {

@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import sun from './sun.svg';
-import moon from './moon.svg';
 import './App.css';
 
 
-class Sun extends Component {
-  render() {
-    let imgSrc = this.props.daytime ? sun : moon;
-    let currentClassName = this.props.daytime ? "Sun-img" : "Moon-img";
-    return (
-      <div className="Sun">
-        <img src={imgSrc} className={currentClassName} alt="Sun" />
-      </div>
-    );
-  }
-}
-
 class DayTimer extends Component {
-  animateSun() {
-    console.log(this);
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.value
+    };
+    // Bind the method to the component context
+    this.renderChildren = this.renderChildren.bind(this);
+  }
+
+  changeHandler(value) {
+    this.setState({
+      value: value
+    });
+  }
+
+  renderChildren() {
+    return this.props.children
+  }
+
   render() {
-    this.animateSun();
+    console.log(this.props);
     if (this.props.daytime) {
       document.getElementsByTagName('body')[0].className = '';
     } else {
@@ -29,7 +31,7 @@ class DayTimer extends Component {
     }
     return (
       <div className="Day">
-        <Sun daytime={this.props.daytime} />
+        {this.renderChildren(this.props.testValue)}
       </div>
 
     );
