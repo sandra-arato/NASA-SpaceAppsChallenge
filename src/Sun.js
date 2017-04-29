@@ -148,7 +148,7 @@ class Sun extends Component {
 
         // TODO: x should be between 2 and 80, y shoudl be between 20 and 60
         // 75 - 37.5 * Math.sin(15*(seconds%12) * Math.PI/180)
-        return {coordinates: [seconds * 9, vertical]};
+//         return {coordinates: [seconds * 9, vertical]};
       });
 
     }, 10);

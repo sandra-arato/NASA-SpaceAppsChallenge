@@ -476,6 +476,10 @@ body {
   height: 70px;
   z-index: 1000;
 }
+.Settings:hover {
+  animation: Settings-spin 0.5s forwards;
+}
+
 .MeterContainer {
   display: block;
   position: absolute;
@@ -618,6 +622,11 @@ body {
   background-image: linear-gradient(45deg, white 0%, white 30%, green 30%, green 70%, white 70%);
 }
 
+@keyframes Settings-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(90deg); }
+}
+
 @keyframes SunMoon-img-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -639,7 +648,7 @@ body {
 
 @keyframes SkyColor {
   0% {
-    background: #c5d4eb;
+    background: #b1bac7;
   }
   25% {
     background: #d2edf8;
