@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import sun_moon from './sun_moon_rotation.svg';
 import sun from './sun.svg';
 import moon from './moon.svg';
 import './App.css';
@@ -108,14 +109,14 @@ class Sun extends Component {
 
     this.state = {
       timer: null,
-      coordinates: [0, 100]
+      coordinates: [-10, 75]
     };
   }
 
   getInitialState(){
     return {
       timer: () => {},
-      coordinates: [0, 100]
+      coordinates: [-10, 75]
     }
   }
 
@@ -135,41 +136,35 @@ class Sun extends Component {
       console.log(seconds);
 
       // we should stop at the end of each cycle  - when sun reaches the ground
-      if (seconds > 9) {
+/*
+      if (seconds > 24) {
         that.clearRequestInterval(that.timer);
       }
+*/
 
       // update component state with new coordinates
       that.setState((prevState, props) => {
-        let vertical = 0;
-        // vertical coordinate should only increase till midday
-        if (seconds < 5 ) {
-          vertical = 80 - 7*seconds;
-        } else {
-          vertical = 7.8*seconds;
-        }
+        
 
         // TODO: x should be between 2 and 80, y shoudl be between 20 and 60
-        return {coordinates: [seconds * 9, vertical]};
+        // 75 - 37.5 * Math.sin(15*(seconds%12) * Math.PI/180)
+//         return {coordinates: [seconds * 9, vertical]};
       });
 
-    }, 1000);
+    }, 10);
 
     that.timer = timerFn;
     that.timer();
   }
 
   componentDidMount() {
-    clearInterval(this.timer);
-    this.animate();
+//     clearInterval(this.timer);
+//     this.animate();
   }
 
   render() {
-    let imgSrc = this.props.isItSun ? sun : moon;
-    let currentClassName = this.props.isItSun ? "Sun-img" : "Moon-img";
-    let left = this.state.coordinates[0] + 'vw';
-    let top = this.state.coordinates[1] + 'vh';
-    return (<img src={imgSrc} className={currentClassName} alt="Sun" style={{left: left, top: top }}/>);
+
+    return (<img src={sun_moon} className="SunMoon-img" alt="Sun Moon"/>);
   }
 }
 
