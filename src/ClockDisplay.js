@@ -156,6 +156,7 @@ class ClockDisplay extends Component {
     let batteryLevel = this.state.battery;
 
     var timer = that.requestInterval(function() {
+      if (!that.props.play) return;
       // var play =
 
       iterator = (iterator + 1) % 24;

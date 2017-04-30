@@ -22,7 +22,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      play: false
+      play: true
     }
     this.pauseAnimation = this.pauseAnimation.bind(this);
   }
