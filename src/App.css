@@ -434,7 +434,7 @@ template {
 body {
   box-sizing: border-box;
   /*background: #ebfcfc;*/
-  animation: SkyColor infinite 24s linear;
+  animation: SkyColor infinite 24.4s linear;
   padding: 0;
   height: 100vh;
   overflow: hidden;
@@ -618,7 +618,7 @@ body {
     left: 60%;
     margin-left: -50%;
     width: 90%;
-    animation: SunMoon-img-spin infinite 24s linear;
+    animation: SunMoon-img-spin infinite 24.4s linear;
     transform: rotate(100deg);
 }
 
