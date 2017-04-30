@@ -616,12 +616,21 @@ body {
   z-index: 1000;
 }
 
-.Money img, .Money span {
+.Money svg, .Money span {
   vertical-align: top;
 }
 
-.Money img {
+.Money svg {
   width: 60px;
+  fill: grey;
+}
+
+.Money svg.in {
+  fill: green;
+}
+
+.Money svg.out {
+  fill: red;
 }
 
 .Money span {
@@ -725,15 +734,28 @@ body {
 }
 
 .loading-bar.out {
+  right: 0;
+  position: absolute;
+  width: 600px;
+  height: 100%;
   background: red;
   background-image: linear-gradient(45deg, white 0%, white 30%, red 30%, red 70%, white 70%);
-  animation: Slide 8s linear infinite;
+  background-size: 25px 10px;
+  transition: width 0.33s linear;
+  /*background: red;
+  background-image: linear-gradient(45deg, white 0%, white 30%, red 30%, red 70%, white 70%);
+  animation: Slide 8s linear infinite;*/
 }
 
 .loading-bar.in {
+  right: 0;
+  position: absolute;
+  width: 600px;
+  height: 100%;
   background: green;
   background-image: linear-gradient(45deg, white 0%, white 30%, green 30%, green 70%, white 70%);
-  animation: Slide 8s linear infinite;
+  background-size: 25px 10px;
+  transition: width 0.33s linear;
 }
 
 @keyframes Settings-spin {

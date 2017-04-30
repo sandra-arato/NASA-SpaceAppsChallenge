@@ -16,7 +16,8 @@ class ClockDisplay extends Component {
 
     for (var key in data) {
       var rooms =  data[key].appliances;
-      console.log(rooms);
+      // console.log(rooms);
+      total_kw = 0;
       for (var room in rooms) {
         var cur = rooms[ room ];
         total_kw += cur.total_kw;
@@ -25,16 +26,17 @@ class ClockDisplay extends Component {
     }
 
     var maxIs = Math.max.apply(null, hourlyConsumption);
-    console.log('find max', hourlyConsumption, maxIs);
-
+    console.log('rooms', rooms, 'hourlyConsumption', hourlyConsumption);
     this.state = {
       value: props.value,
       time: '06:00',
       iterator: 5,
       solar: 0,
-      battery: 0.4,
+      battery: 0.8,
       usage: 0.5,
-      topConsumption: maxIs
+      topConsumption: maxIs,
+      hourly: hourlyConsumption,
+      grid: ''
     };
 
     /*!
@@ -146,20 +148,52 @@ class ClockDisplay extends Component {
     var that = this;
     let iterator = that.state.iterator;
     let string = '00:00';
+    let batteryLevel = this.state.battery;
 
     var timer = that.requestInterval(function() {
       iterator = (iterator + 1) % 24;
       string = data[iterator].hour > 9 ? '' : '0';
       string = string +  data[iterator].hour + ':00';
 
+      if (data && data[iterator]) {
+        var solarPercentage = data[iterator].kw / data[13].kw;
+        var usagePercentage = that.state.hourly[iterator] / that.state.topConsumption;
 
-      var solarPercentage = data[iterator].kw / data[13].kw;
+        var batteryLoadInHour = data[iterator].kw * 72 * 0.12 - that.state.hourly[iterator];
+        var batteryPercentage = batteryLevel / 14;
+        batteryLevel = Math.min(14, batteryLevel + batteryLoadInHour);
+        if (batteryLevel > 0 && batteryPercentage !== 1) {
+          if ( batteryLevel > 14 ) {
+            batteryPercentage = 1;
 
-      console.log('solar', solarPercentage);
-      that.setState((prevState, props) => {
-        return {time: string,
-        solar: solarPercentage };
-      });
+          } else {
+            document.getElementById('grid').className = 'loading-bar';
+            document.getElementById('money').classList.remove('in');
+            document.getElementById('money').classList.remove('out');
+          }
+        } else if ( batteryPercentage === 1 ) {
+          batteryPercentage = batteryLevel < 14 ? batteryLevel / 14 : 1;
+          console.log('loading grid');
+          // load the grid
+          document.getElementById('grid').className = 'loading-bar in';
+            document.getElementById('money').classList.add('in');
+        } else {
+          // use the grid
+          batteryPercentage = batteryLevel > 0 ? batteryLevel /14  : 0;
+            document.getElementById('grid').className = 'loading-bar out';
+            document.getElementById('money').classList.add('out');
+
+        }
+        that.setState((prevState, props) => {
+          return {
+            time: string,
+            solar: solarPercentage,
+            usage: usagePercentage,
+            battery: batteryPercentage
+         };
+        });
+      }
+
     }, 1000);
 
     that.timer = timer;
@@ -184,7 +218,7 @@ class ClockDisplay extends Component {
         </div>
         <Bar type="solar" percent={this.state.solar} />
         <Bar type="usage" percent={this.state.usage} />
-        <Bar type="battery" percent={this.state.batter} />
+        <Bar type="battery" percent={this.state.battery} />
       </div>
 
     );
