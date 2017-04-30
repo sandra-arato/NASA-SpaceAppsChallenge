@@ -23,11 +23,10 @@ class DayTimer extends Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.daytime) {
-      document.getElementsByTagName('body')[0].className = '';
+      document.getElementsByTagName('body')[0].classList.remove('night');
     } else {
-      document.getElementsByTagName('body')[0].className = 'night';
+      document.getElementsByTagName('body')[0].classList.add('night');
     }
     return (
       <div className="Day">

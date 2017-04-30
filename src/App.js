@@ -18,6 +18,26 @@ import houseStudy from './house/house-study.png';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      play: false
+    }
+    this.pauseAnimation = this.pauseAnimation.bind(this);
+  }
+  pauseAnimation() {
+    console.log('hello', this);
+    var newState = !this.state.play;
+    this.setState({
+      play:newState
+    });
+    document.body.classList.remove(newState ? 'paused' : 'running');
+    console.log(document.getElementsByClassName('SunMoon-img')[0]);
+    document.getElementsByClassName('SunMoon-img')[0].classList.remove(newState ? 'paused' : 'running');
+    document.body.classList.add(newState ? 'running' : 'paused');
+    document.getElementsByClassName('SunMoon-img')[0].classList.add(newState ? 'running' : 'paused');
+
+  }
   render() {
     return (
       <div className="App">
@@ -56,6 +76,7 @@ class App extends Component {
               <div className="loading-bar" id="grid"></div>
             </div>
           </div>
+          <button className="Play" onClick={this.pauseAnimation}>{this.state.play ? 'Pause' : 'Play'}</button>
         </footer>
       </div>
     );

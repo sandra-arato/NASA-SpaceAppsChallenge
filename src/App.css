@@ -440,6 +440,28 @@ body {
   overflow: hidden;
 }
 
+.paused, .SunMoon-img.paused {
+  animation-play-state: paused;
+}
+
+.running, .SunMoon-img.running {
+  animation-play-state: running;
+}
+
+.Play {
+  position: absolute;
+  display: block;
+  background: #f8f8f8;
+  width: 70px;
+  height: 40px;
+  right: 30px;
+  bottom: 90px;
+  font-family: 'Avenir';
+  text-transform: uppercase;
+  background: #fff;
+  border: none;
+}
+
 .night {
   background-image: url('./night.png');
 }
@@ -639,7 +661,7 @@ body {
   margin: 0;
   padding-bottom: 12px;
   z-index: 1000;
-  transition: transform 0.3s ease-in;
+  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.440, 0.920);
 }
 
 .Money {
