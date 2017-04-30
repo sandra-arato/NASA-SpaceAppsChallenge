@@ -8,13 +8,33 @@ import './App.css';
 class ClockDisplay extends Component {
   constructor(props) {
     super(props);
+
+    var hourlyConsumption = [];
+      
+    var summa = 0;
+    var total_kw = 0;
+
+    for (var key in data) {
+      var rooms =  data[key].appliances;
+      console.log(rooms);
+      for (var room in rooms) {
+        var cur = rooms[ room ];
+        total_kw += cur.total_kw;
+      }
+      hourlyConsumption.push(total_kw);
+    }
+    
+    var maxIs = Math.max.apply(null, hourlyConsumption);
+    console.log('find max', hourlyConsumption, maxIs);
+
     this.state = {
       value: props.value,
       time: '06:00',
       iterator: 5,
       solar: 0,
       battery: 0.4,
-      usage: 0.5
+      usage: 0.5,
+      topConsumption: maxIs
     };
 
     /*!
@@ -134,31 +154,8 @@ class ClockDisplay extends Component {
 
 
       var solarPercentage = data[iterator].kw / data[13].kw;
-      var appliances = [];
-      var consumption = () => {
-        var summa = 0;
-        var running =  data[iterator].appliances;
-        console.log('hey', a);
-        for (var a = 0; a < running.length; a++ ) {
-          console.log('hey', a);
-          for(var key in appls){
-
-            if (appls.hasOwnProperty(key) && running.includes(appls[key].id)) {
-              summa = summa + appls[key].total_kw;
-              console.log('summa', summa);
-              appliances.push(summa);
-            }
-          }
-          console.log('current', maxConsumption);
-
-        }
-        return appliances;
-      }
-
-      console.log(appliances);
-      consumption();
-      var maxConsumption =  Math.max.apply(null, appliances);
-      console.log('max', maxConsumption);
+//             var maxConsumption =  Math.max.apply(null, appliances);
+//       console.log('max', maxConsumption);
       console.log('solar', solarPercentage);
       that.setState((prevState, props) => {
         return {time: string,
