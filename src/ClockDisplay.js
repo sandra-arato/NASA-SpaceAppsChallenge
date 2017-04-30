@@ -159,6 +159,7 @@ class ClockDisplay extends Component {
       string = string +  data[iterator].hour + ':00';
 
       if (data && data[iterator]) {
+        that.updateRooms(data[iterator].appliances);
         var solarPercentage = data[iterator].kw / data[13].kw;
         var usagePercentage = that.state.hourly[iterator] / that.state.topConsumption;
 
@@ -207,6 +208,19 @@ class ClockDisplay extends Component {
     } catch(e) {
       // this is valid at 2:28AM.
       return;
+    }
+
+  }
+
+  updateRooms(rooms) {
+
+    var roomElements = document.querySelectorAll('.room');
+    for (var re of roomElements) {
+        re.classList.remove('show');
+    }
+    for (var room in rooms) {
+        var roomElement = document.getElementById('house-' + room);
+        roomElement.classList.add('show');
     }
 
   }

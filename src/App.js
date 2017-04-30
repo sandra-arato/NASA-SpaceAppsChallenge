@@ -6,7 +6,15 @@ import meters from './meters.svg';
 import gear from './gear.svg';
 import car from './car.svg';
 import earth from './earth.svg';
-import house from './house.gif';
+import house from './house/house.png';
+import houseBathroom from './house/house-bathroom.png';
+import houseBedroom from './house/house-bedroom.png';
+import houseHall from './house/house-hall.png';
+import houseKitchen from './house/house-kitchen.png';
+import houseLivingroom from './house/house-livingroom.png';
+import houseStorage from './house/house-storage.png';
+import houseStudy from './house/house-study.png';
+
 import './App.css';
 
 class App extends Component {
@@ -33,6 +41,14 @@ class App extends Component {
           <img src={meters} className="Meters" alt="meter" />
         </div>
         <img src={house} className="House" alt="house" />
+        <img src={houseBathroom} className="House room" alt="house" id="house-bathroom"/>
+        <img src={houseBedroom} className="House room" alt="house" id="house-bedroom"/>
+        <img src={houseHall} className="House room" alt="house" id="house-hall"/>
+        <img src={houseKitchen} className="House room" alt="house" id="house-kitchen"/>
+        <img src={houseLivingroom} className="House room" alt="house" id="house-livingroom"/>
+        <img src={houseStorage} className="House room" alt="house" id="house-storage"/>
+        <img src={houseStudy} className="House room" alt="house" id="house-study"/>
+
         <footer className="Ground">
           <img src={gear} className="Settings" alt="settings" />
           <div className="container">
