@@ -1,241 +1,354 @@
 [
     {
-        "timestamp": "1475056819",
         "kw": 0.00122,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 0
     },
     {
-        "timestamp": "1475060420",
         "kw": 0.00127,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 1
     },
     {
-        "timestamp": "1475064020",
         "kw": 0.00128,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 2
     },
     {
-        "timestamp": "1475067619",
         "kw": 0.00126,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 3
     },
     {
-        "timestamp": "1475071221",
         "kw": 0.00123,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 4
     },
     {
-        "timestamp": "1475074821",
         "kw": 0.00122,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 5
     },
     {
-        "timestamp": "1475078422",
         "kw": 0.00169,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 6
     },
     {
-        "timestamp": "1475082019",
         "kw": 0.02198,
-        "appliances": [
-            "fridge",
-            "kettle",
-            "toaster",
-            "blender"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 3.0600000000000005,
+                "room": "kitchen"
+            }
+        },
         "hour": 7
     },
     {
-        "timestamp": "1475085620",
         "kw": 0.4261,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 8
     },
     {
-        "timestamp": "1475089221",
         "kw": 0.66226,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 9
     },
     {
-        "timestamp": "1475092819",
         "kw": 0.84412,
-        "appliances": [
-            "fridge",
-            "oven",
-            "vacuum"
-        ],
+        "appliances": {
+            "livingroom": {
+                "total_kw": 1.1,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 1.81,
+                "room": "kitchen"
+            }
+        },
         "hour": 10
     },
     {
-        "timestamp": "1475096423",
         "kw": 0.97199,
-        "appliances": [
-            "fridge",
-            "oven",
-            "vacuum"
-        ],
+        "appliances": {
+            "livingroom": {
+                "total_kw": 1.1,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 1.81,
+                "room": "kitchen"
+            }
+        },
         "hour": 11
     },
     {
-        "timestamp": "1475100025",
         "kw": 1.02727,
-        "appliances": [
-            "fridge",
-            "oven",
-            "vacuum"
-        ],
+        "appliances": {
+            "livingroom": {
+                "total_kw": 1.1,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 1.81,
+                "room": "kitchen"
+            }
+        },
         "hour": 12
     },
     {
-        "timestamp": "1475103629",
         "kw": 1.00772,
-        "appliances": [
-            "fridge",
-            "aircon"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 2.3,
+                "room": "study"
+            },
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 13
     },
     {
-        "timestamp": "1475107220",
         "kw": 0.90481,
-        "appliances": [
-            "washing_machine",
-            "fridge",
-            "aircon",
-            "dishwasher"
-        ],
+        "appliances": {
+            "bathroom": {
+                "total_kw": 0.9,
+                "room": "bathroom"
+            },
+            "study": {
+                "total_kw": 2.3,
+                "room": "study"
+            },
+            "kitchen": {
+                "total_kw": 2.61,
+                "room": "kitchen"
+            }
+        },
         "hour": 14
     },
     {
-        "timestamp": "1475110827",
         "kw": 0.73891,
-        "appliances": [
-            "washing_machine",
-            "fridge",
-            "hifi",
-            "aircon",
-            "dishwasher",
-            "hairdryer"
-        ],
+        "appliances": {
+            "bathroom": {
+                "total_kw": 1.9,
+                "room": "bathroom"
+            },
+            "livingroom": {
+                "total_kw": 0.1,
+                "room": "livingroom"
+            },
+            "study": {
+                "total_kw": 2.3,
+                "room": "study"
+            },
+            "kitchen": {
+                "total_kw": 2.61,
+                "room": "kitchen"
+            }
+        },
         "hour": 15
     },
     {
-        "timestamp": "1475114418",
         "kw": 0.52183,
-        "appliances": [
-            "washing_machine",
-            "fridge",
-            "pc",
-            "hifi",
-            "aircon",
-            "dishwasher"
-        ],
+        "appliances": {
+            "bathroom": {
+                "total_kw": 0.9,
+                "room": "bathroom"
+            },
+            "livingroom": {
+                "total_kw": 0.1,
+                "room": "livingroom"
+            },
+            "study": {
+                "total_kw": 2.75,
+                "room": "study"
+            },
+            "kitchen": {
+                "total_kw": 2.61,
+                "room": "kitchen"
+            }
+        },
         "hour": 16
     },
     {
-        "timestamp": "1475118024",
         "kw": 0.27359,
-        "appliances": [
-            "fridge",
-            "pc",
-            "laptop",
-            "hifi",
-            "aircon"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 2.75,
+                "room": "study"
+            },
+            "bedroom": {
+                "total_kw": 0.05,
+                "room": "bedroom"
+            },
+            "livingroom": {
+                "total_kw": 0.1,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 17
     },
     {
-        "timestamp": "1475121619",
         "kw": 0.01381,
-        "appliances": [
-            "tv",
-            "lights",
-            "fridge",
-            "pc",
-            "laptop",
-            "hifi",
-            "aircon"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 2.75,
+                "room": "study"
+            },
+            "bedroom": {
+                "total_kw": 0.05,
+                "room": "bedroom"
+            },
+            "livingroom": {
+                "total_kw": 1.4000000000000001,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 18
     },
     {
-        "timestamp": "1475125226",
         "kw": 0.00124,
-        "appliances": [
-            "tv",
-            "lights",
-            "fridge",
-            "pc",
-            "laptop",
-            "microwave"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 0.45,
+                "room": "study"
+            },
+            "bedroom": {
+                "total_kw": 0.05,
+                "room": "bedroom"
+            },
+            "livingroom": {
+                "total_kw": 1.3,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 1.51,
+                "room": "kitchen"
+            }
+        },
         "hour": 19
     },
     {
-        "timestamp": "1475128822",
         "kw": 0.00122,
-        "appliances": [
-            "tv",
-            "desk_light",
-            "fridge",
-            "pc",
-            "laptop",
-            "microwave"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 0.495,
+                "room": "study"
+            },
+            "bedroom": {
+                "total_kw": 0.05,
+                "room": "bedroom"
+            },
+            "livingroom": {
+                "total_kw": 0.4,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 1.51,
+                "room": "kitchen"
+            }
+        },
         "hour": 20
     },
     {
-        "timestamp": "1475132426",
         "kw": 0.00123,
-        "appliances": [
-            "tv",
-            "desk_light",
-            "fridge"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 0.045,
+                "room": "study"
+            },
+            "livingroom": {
+                "total_kw": 0.4,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 21
     },
     {
-        "timestamp": "1475136020",
         "kw": 0.0012,
-        "appliances": [
-            "tv",
-            "desk_light",
-            "fridge"
-        ],
+        "appliances": {
+            "study": {
+                "total_kw": 0.045,
+                "room": "study"
+            },
+            "livingroom": {
+                "total_kw": 0.4,
+                "room": "livingroom"
+            },
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 22
     },
     {
-        "timestamp": "1475139625",
         "kw": 0.00123,
-        "appliances": [
-            "fridge"
-        ],
+        "appliances": {
+            "kitchen": {
+                "total_kw": 0.21,
+                "room": "kitchen"
+            }
+        },
         "hour": 23
     }
 ]

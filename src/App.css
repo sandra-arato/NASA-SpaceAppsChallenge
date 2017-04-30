@@ -773,8 +773,11 @@ body {
   75% {
     background: #35534e;
   }
-  100% {
+  90% {
     background: #c5d4eb;
+  }
+  100% {
+    background: #b1bac7;
   }
 }
 

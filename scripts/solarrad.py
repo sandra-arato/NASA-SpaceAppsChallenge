@@ -15,17 +15,19 @@ def main():
 
             name = line[0]
             id = line[1]
-            kw = line[2]
-            count = line[3]
-            total_kw = line[4]
-            usage_time_per_day = line[5]
-            units_per_day = line[6]
-            time_of_day_usage = line[7]
-            cost_per_day = line[8]
+            room = line[2]
+            kw = line[3]
+            count = line[4]
+            total_kw = line[5]
+            usage_time_per_day = line[6]
+            units_per_day = line[7]
+            time_of_day_usage = line[8]
+            cost_per_day = line[9]
 
             obj = {
                 'name': name,
                 'id': id,
+                'room': room,
                 'kw': float(kw),
                 'count': int(count),
                 'total_kw': float(total_kw),
@@ -71,13 +73,20 @@ def main():
 
             hour = int(time.split(':')[0])
             h = hourlies[ hour ]
-            running = [obj['id'] for obj in h ]
+            running = {}
+            for obj in h:
+                if obj['room'] not in running:
+                    running[ obj['room'] ] = {
+                        'room': obj['room'],
+                        'total_kw': 0
+                    }
+                running[ obj['room'] ]['total_kw'] += obj['total_kw']
             
             apps = [{'id': obj['id'], 'state': 1 if obj['id'] in running else 0} for obj in appliances ]
                 
 
             radiations[ line[ 2 ]].insert(0, {
-                'timestamp': timestamp,
+#                'timestamp': timestamp,
 #                 'date': date,
                 'hour': hour,
                 'kw': round(float(power) / 1000, 5),

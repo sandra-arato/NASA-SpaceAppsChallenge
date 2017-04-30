@@ -8,7 +8,8 @@
         "name": "TV", 
         "time_of_day_usage": 18, 
         "cost_per_day": 0.416, 
-        "id": "tv"
+        "id": "tv", 
+        "room": "livingroom"
     }, 
     {
         "count": 1, 
@@ -19,7 +20,8 @@
         "name": "Washing machine", 
         "time_of_day_usage": 14, 
         "cost_per_day": 0.468, 
-        "id": "washing_machine"
+        "id": "washing_machine", 
+        "room": "bathroom"
     }, 
     {
         "count": 15, 
@@ -30,7 +32,8 @@
         "name": "60W Lights", 
         "time_of_day_usage": 18, 
         "cost_per_day": 0.234, 
-        "id": "lights"
+        "id": "lights", 
+        "room": "livingroom"
     }, 
     {
         "count": 3, 
@@ -41,7 +44,8 @@
         "name": "LED Desk light", 
         "time_of_day_usage": 20, 
         "cost_per_day": 0.0234, 
-        "id": "desk_light"
+        "id": "desk_light", 
+        "room": "study"
     }, 
     {
         "count": 1, 
@@ -52,7 +56,8 @@
         "name": "Fridge", 
         "time_of_day_usage": 0, 
         "cost_per_day": 1.3104, 
-        "id": "fridge"
+        "id": "fridge", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -63,7 +68,8 @@
         "name": "PC", 
         "time_of_day_usage": 16, 
         "cost_per_day": 0.468, 
-        "id": "pc"
+        "id": "pc", 
+        "room": "study"
     }, 
     {
         "count": 1, 
@@ -74,7 +80,8 @@
         "name": "Laptop", 
         "time_of_day_usage": 17, 
         "cost_per_day": 0.039, 
-        "id": "laptop"
+        "id": "laptop", 
+        "room": "bedroom"
     }, 
     {
         "count": 1, 
@@ -85,7 +92,8 @@
         "name": "Microwave", 
         "time_of_day_usage": 19, 
         "cost_per_day": 0.338, 
-        "id": "microwave"
+        "id": "microwave", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -96,7 +104,8 @@
         "name": "Oven", 
         "time_of_day_usage": 10, 
         "cost_per_day": 0.832, 
-        "id": "oven"
+        "id": "oven", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -107,7 +116,8 @@
         "name": "Kettle", 
         "time_of_day_usage": 7, 
         "cost_per_day": 0.234, 
-        "id": "kettle"
+        "id": "kettle", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -118,7 +128,8 @@
         "name": "Vacuum", 
         "time_of_day_usage": 10, 
         "cost_per_day": 0.572, 
-        "id": "vacuum"
+        "id": "vacuum", 
+        "room": "livingroom"
     }, 
     {
         "count": 1, 
@@ -129,7 +140,8 @@
         "name": "Hi-Fi", 
         "time_of_day_usage": 15, 
         "cost_per_day": 0.078, 
-        "id": "hifi"
+        "id": "hifi", 
+        "room": "livingroom"
     }, 
     {
         "count": 1, 
@@ -140,7 +152,8 @@
         "name": "Toaster", 
         "time_of_day_usage": 7, 
         "cost_per_day": 0.078, 
-        "id": "toaster"
+        "id": "toaster", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -151,7 +164,8 @@
         "name": "Blender", 
         "time_of_day_usage": 7, 
         "cost_per_day": 0.0585, 
-        "id": "blender"
+        "id": "blender", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -162,7 +176,8 @@
         "name": "Air conditioner", 
         "time_of_day_usage": 13, 
         "cost_per_day": 2.99, 
-        "id": "aircon"
+        "id": "aircon", 
+        "room": "study"
     }, 
     {
         "count": 1, 
@@ -173,7 +188,8 @@
         "name": "Dishwasher", 
         "time_of_day_usage": 14, 
         "cost_per_day": 1.248, 
-        "id": "dishwasher"
+        "id": "dishwasher", 
+        "room": "kitchen"
     }, 
     {
         "count": 1, 
@@ -184,6 +200,7 @@
         "name": "Hair dryer", 
         "time_of_day_usage": 15, 
         "cost_per_day": 0.13, 
-        "id": "hairdryer"
+        "id": "hairdryer", 
+        "room": "bathroom"
     }
 ]
