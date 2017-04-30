@@ -518,17 +518,22 @@ body {
   position: relative;
   margin: 0 4px;
 }
-
-.Labels {
-  position: relative;
-  top: 230px;
-  left: -12px;
-  display: flex;
+.ClockContainer {
+  display: block;
+  position: absolute;
   width: 100%;
+}
+.Labels {
+  position: absolute;
+  display: table;
+  top: 360px;
+  right: 60px;
+  width: 200px;
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
   line-height: 1.3em;
+  z-index: 1300;
 }
 .Bar {
   display: block;
@@ -539,9 +544,12 @@ body {
   z-index: 1300;
 }
 
-.BarLabels {
-  display: inline-flex;
+.BarLabel {
+  display: table-cell;
+  width: 90px;
+  margin: 4px;
 }
+
 
 .House {
   display: block;

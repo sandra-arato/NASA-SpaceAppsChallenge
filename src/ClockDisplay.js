@@ -193,9 +193,9 @@ class ClockDisplay extends Component {
             solar: solarPercentage,
             usage: usagePercentage,
             battery: batteryPercentage,
-            currentBattery: batteryLevel,
-            currentSolar: data[iterator].kw,
-            currentUsage: that.state.hourly[iterator]
+            currentBattery: batteryLevel > 0 ? Math.ceil(batteryLevel * 100) /100 : 0,
+            currentSolar: Math.ceil(data[iterator].kw * 100) /100 ,
+            currentUsage: Math.ceil(that.state.hourly[iterator] * 100) /100
          };
         });
       }
@@ -238,11 +238,11 @@ class ClockDisplay extends Component {
         <div className="Labels">
           <div className="BarLabel">
             <p>Energy Usage</p>
-            <span id="usage-level">{this.state.currentUsage}</span>
+            <span id="usage-level">{this.state.currentUsage + ' kW/h'}</span>
           </div>
           <div className="BarLabel">
             <p>Input energy</p>
-            <span id="energy-level">{this.state.currentSolar}</span>
+            <span id="energy-level">{this.state.currentSolar + ' kW/m2'}</span>
           </div>
           <div className="BarLabel">
             <p>Battery Level</p>
