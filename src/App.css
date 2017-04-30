@@ -473,9 +473,9 @@ body {
 .Settings {
   display: block;
   position: absolute;
-  bottom: 25px;
+  bottom: 30px;
   left: 30px;
-  height: 70px;
+  height: 60px;
   z-index: 1000;
 }
 .Settings:hover {
@@ -488,6 +488,7 @@ body {
   top: 100px;
   right: 50px;
   width: 190px;
+  height: 340px;
   background: rgba(248,248,248,0.65);
   border: 1px solid rgba(248,248,248,0.7);
   padding: 14px 8px;
@@ -499,7 +500,7 @@ body {
 }
 
 .MeterContainer p {
-  margin-left: 10px;
+  margin-left: -5px;
 }
 
 .MeterContainer img + p {
@@ -516,6 +517,30 @@ body {
   display: block;
   position: relative;
   margin: 0 4px;
+}
+
+.Labels {
+  position: relative;
+  top: 230px;
+  left: -12px;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.3em;
+}
+.Bar {
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 190px;
+  z-index: 1300;
+}
+
+.BarLabels {
+  display: inline-flex;
 }
 
 .House {
@@ -612,7 +637,6 @@ body {
   width: 180px;
   margin: 0;
   padding-bottom: 12px;
-  vertical-align: top;
   z-index: 1000;
 }
 
@@ -635,6 +659,8 @@ body {
 
 .Money span {
   margin-top: 10px;
+  line-height: 50px;
+  margin-left: 8px;
 }
 
 .Social:hover {
@@ -691,7 +717,7 @@ body {
 
 .loading.energy {
   position: absolute;
-  right: 200px;
+  right: 20px;
   top: 234px;
   z-index: 3000;
   transform: rotate(90deg);
@@ -704,15 +730,21 @@ body {
 }
 
 .loading.energy.solar {
-  right: 72px;
+  position: relative;
+  top: 140px;
+  right: 6px;
 }
 
 .loading.energy.usage {
-  right: 142px;
+  position: relative;
+  top: 140px;
+  right: 76px;
 }
 
 .loading.energy.battery {
-  right: 3px;
+  position: relative;
+  top: 140px;
+  right: -62px;
 }
 
 .loading-bar.battery {

@@ -36,7 +36,10 @@ class ClockDisplay extends Component {
       usage: 0.5,
       topConsumption: maxIs,
       hourly: hourlyConsumption,
-      grid: ''
+      grid: '',
+      currentBattery: 0.2,
+      currentSolar: 0.021,
+      currentUsage: 0.4
     };
 
     /*!
@@ -173,7 +176,6 @@ class ClockDisplay extends Component {
           }
         } else if ( batteryPercentage === 1 ) {
           batteryPercentage = batteryLevel < 14 ? batteryLevel / 14 : 1;
-          console.log('loading grid');
           // load the grid
           document.getElementById('grid').className = 'loading-bar in';
             document.getElementById('money').classList.add('in');
@@ -189,7 +191,10 @@ class ClockDisplay extends Component {
             time: string,
             solar: solarPercentage,
             usage: usagePercentage,
-            battery: batteryPercentage
+            battery: batteryPercentage,
+            currentBattery: batteryLevel,
+            currentSolar: data[iterator].kw,
+            currentUsage: that.state.hourly[iterator]
          };
         });
       }
@@ -212,13 +217,28 @@ class ClockDisplay extends Component {
 
   render() {
     return (
-      <div className="ClockContainer">
+      <div className="ClockContainer" id="ClockController">
         <div id="clockItem" className="clock">
           <p>{this.state.time}</p>
         </div>
+        <div className="Labels">
+          <div className="BarLabel">
+            <p>Energy Usage</p>
+            <span id="usage-level">{this.state.currentUsage}</span>
+          </div>
+          <div className="BarLabel">
+            <p>Input energy</p>
+            <span id="energy-level">{this.state.currentSolar}</span>
+          </div>
+          <div className="BarLabel">
+            <p>Battery Level</p>
+            <span id="battery-level">{this.state.currentBattery + ' kW/h'}</span>
+          </div>
+        </div>
         <Bar type="solar" percent={this.state.solar} />
         <Bar type="usage" percent={this.state.usage} />
-        <Bar type="battery" percent={this.state.battery} />
+        <Bar type="battery" percent={this.state.battery}  />
+
       </div>
 
     );
