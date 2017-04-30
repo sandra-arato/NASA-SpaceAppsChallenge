@@ -492,6 +492,13 @@ body {
   color: #464646;
 }
 
+.SettingsPanel {
+  position: absolute;
+  left: 0px;
+  bottom: 130px;
+  width: 400px;
+}
+
 .Settings {
   display: block;
   position: absolute;
@@ -501,6 +508,7 @@ body {
   z-index: 1000;
 }
 .Settings:hover {
+  cursor: pointer;
   animation: Settings-spin 0.5s forwards;
 }
 
@@ -647,7 +655,7 @@ body {
 .Car {
   position: fixed;
   bottom: 106px;
-  left: 290px;
+  left: 350px;
   width: 170px;
   margin: 0;
 }

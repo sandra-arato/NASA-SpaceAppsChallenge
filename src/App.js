@@ -14,6 +14,7 @@ import houseKitchen from './house/house-kitchen.png';
 import houseLivingroom from './house/house-livingroom.png';
 import houseStorage from './house/house-storage.png';
 import houseStudy from './house/house-study.png';
+import settings from './room_control_panel.png';
 
 import './App.css';
 
@@ -38,6 +39,11 @@ class App extends Component {
     document.getElementsByClassName('SunMoon-img')[0].classList.add(newState ? 'running' : 'paused');
 
   }
+
+  toggleSettings() {
+    document.getElementById('settings-panel').classList.toggle('hidden');
+  }
+
   render() {
     return (
       <div className="App">
@@ -69,8 +75,10 @@ class App extends Component {
         <img src={houseStorage} className="House room" alt="house" id="house-storage"/>
         <img src={houseStudy} className="House room" alt="house" id="house-study"/>
 
+        <img src={settings} className="SettingsPanel hidden" alt="settings" id="settings-panel"/>
+
         <footer className="Ground">
-          <img src={gear} className="Settings" alt="settings" />
+          <img src={gear} className="Settings" alt="settings" onClick={this.toggleSettings}/>
           <div className="container">
             <div className="loading">
               <div className="loading-bar" id="grid"></div>
