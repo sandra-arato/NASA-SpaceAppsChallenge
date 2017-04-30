@@ -447,7 +447,13 @@ body {
 .running, .SunMoon-img.running {
   animation-play-state: running;
 }
-
+.SocialBar {
+  position: fixed;
+  bottom: 132px;
+  left: 20px;
+  width: 400px;
+  z-index: 3000;
+}
 .Play {
   position: absolute;
   display: block;
@@ -455,7 +461,7 @@ body {
   width: 70px;
   height: 40px;
   right: 30px;
-  bottom: 70px;
+  bottom: 36px;
   font-family: 'Avenir';
   text-transform: uppercase;
   background: #fff;
