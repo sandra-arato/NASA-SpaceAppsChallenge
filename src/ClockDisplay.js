@@ -156,7 +156,7 @@ class ClockDisplay extends Component {
       }
 
       console.log(appliances);
-      consumption();
+      consumption()
       var maxConsumption =  Math.max.apply(null, appliances);
       console.log('max', maxConsumption);
       console.log('solar', solarPercentage);
