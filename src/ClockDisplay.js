@@ -149,11 +149,15 @@ class ClockDisplay extends Component {
 
   getMorningTimestamp() {
     var that = this;
+    console.log('get');
+
     let iterator = that.state.iterator;
     let string = '00:00';
     let batteryLevel = this.state.battery;
 
     var timer = that.requestInterval(function() {
+      // var play =
+
       iterator = (iterator + 1) % 24;
       string = data[iterator].hour > 9 ? '' : '0';
       string = string +  data[iterator].hour + ':00';
@@ -195,7 +199,7 @@ class ClockDisplay extends Component {
             battery: batteryPercentage,
             currentBattery: batteryLevel > 0 ? Math.ceil(batteryLevel * 100) /100 : 0,
             currentSolar: Math.ceil(data[iterator].kw * 100) /100 ,
-            currentUsage: Math.ceil(that.state.hourly[iterator] * 100) /100
+            currentUsage: Math.ceil(that.state.hourly[iterator] * 100) /100,
          };
         });
       }
@@ -230,6 +234,12 @@ class ClockDisplay extends Component {
   }
 
   render() {
+    // console.log('render',this.props.play);
+    // if(!this.props.play) {
+    //   this.getMorningTimestamp();
+    // } else {
+    //   this.clearRequestInterval(this.timer);
+    // }
     return (
       <div className="ClockContainer" id="ClockController">
         <div id="clockItem" className="clock">

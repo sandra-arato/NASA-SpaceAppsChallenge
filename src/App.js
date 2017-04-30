@@ -26,7 +26,7 @@ class App extends Component {
     this.pauseAnimation = this.pauseAnimation.bind(this);
   }
   pauseAnimation() {
-    console.log('hello', this);
+    console.log('click event', this.state.play);
     var newState = !this.state.play;
     this.setState({
       play:newState
@@ -56,7 +56,7 @@ class App extends Component {
           <p>Perth</p>
           <p>29 April 2017</p>
         </div>
-        <ClockDisplay />
+        <ClockDisplay play={this.state.play} />
         <div className="MeterContainer">
           <img src={meters} className="Meters" alt="meter" />
         </div>
